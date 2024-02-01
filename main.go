@@ -55,7 +55,8 @@ func Zwiftify(name string) {
 }
 
 func fileNameWithoutExtTrimSuffix(fileName string) string {
-	return strings.TrimSuffix(fileName, filepath.Ext(fileName))
+	res := strings.TrimSuffix(fileName, filepath.Ext(fileName))
+	return strings.ReplaceAll(res, " ", "-")
 }
 
 func main() {
